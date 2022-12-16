@@ -8,8 +8,8 @@ const int HEIGHT = 20;
 
 class Ball{
     public:
-    int x;
-    int y;
+    float x;
+    float y;
 
     Ball(int x,int y){
         this->x = x;
@@ -17,7 +17,7 @@ class Ball{
     }
 
     void draw(vector<vector<char>> &screen){
-        screen[this->y][this->x] = '*'; 
+        screen[int(this->y)][int(this->x)] = '*'; 
 
     }
     void display(vector<vector<char>> screen){
@@ -29,6 +29,8 @@ class Ball{
         }
     }
     void update(){
+        system("clear");
+        this.x += x;
     }
     
 
