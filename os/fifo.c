@@ -51,7 +51,9 @@ void dispPage(){
         if(p[i] != 9999){
             printf("%d ",p[i]);
         }
+
     }
+    printf("\n");
     return;
 }
 
@@ -87,5 +89,7 @@ int main(){
     fifo();
     printf("total page fault %d\n",pgfaultcnt);
     printf("total hit %d\n",hitCount);
+    float hitRatio = (hitCount * 100) / n;
+    printf("hit fault radio %.2f\n",hitRatio);
     return 0;
 }
