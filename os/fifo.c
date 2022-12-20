@@ -4,6 +4,7 @@ int n,nf;
 int in[100];
 int p[50];
 int pgfaultcnt = 0;
+int hitCount = 0;
 
 
 void getData(){
@@ -68,6 +69,7 @@ void fifo(){
            dispPage();
         }
         else{
+            hitCount++; 
             printf("no page fault\n");
         }
 
@@ -83,5 +85,7 @@ int main(){
     printf("enter your data\n");
     getData();
     fifo();
+    printf("total page fault %d\n",pgfaultcnt);
+    printf("total hit %d\n",hitCount);
     return 0;
 }
